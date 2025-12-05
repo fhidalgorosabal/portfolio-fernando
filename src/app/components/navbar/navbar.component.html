@@ -1,0 +1,54 @@
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-gray-200 dark:border-slate-800 shadow-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <!-- Logo -->
+      <div class="flex-shrink-0">
+        <a href="#inicio" (click)="scrollToSection('inicio'); $event.preventDefault()" 
+           class="text-2xl font-bold text-cyan-600 dark:text-amber-500 hover:text-cyan-700 dark:hover:text-amber-400 transition-colors">
+          Fernando
+        </a>
+      </div>
+
+      <!-- Navigation Links -->
+      <div class="hidden md:flex space-x-8">
+        <a href="#inicio" (click)="scrollToSection('inicio'); $event.preventDefault()" 
+           class="text-gray-700 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-amber-500 transition-colors font-medium">
+          Inicio
+        </a>
+        <a href="#experiencia" (click)="scrollToSection('experiencia'); $event.preventDefault()" 
+           class="text-gray-700 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-amber-500 transition-colors font-medium">
+          Experiencia
+        </a>
+        <a href="#proyectos" (click)="scrollToSection('proyectos'); $event.preventDefault()" 
+           class="text-gray-700 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-amber-500 transition-colors font-medium">
+          Proyectos
+        </a>
+        <a href="#habilidades" (click)="scrollToSection('habilidades'); $event.preventDefault()" 
+           class="text-gray-700 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-amber-500 transition-colors font-medium">
+          Habilidades
+        </a>
+        <a href="#contacto" (click)="scrollToSection('contacto'); $event.preventDefault()" 
+           class="text-gray-700 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-amber-500 transition-colors font-medium">
+          Contacto
+        </a>
+      </div>
+
+      <!-- Theme Toggle -->
+      <button 
+        (click)="toggleTheme()"
+        class="p-2 rounded-lg bg-gray-100 dark:bg-slate-800 text-gray-700 dark:text-slate-300 hover:bg-gray-200 dark:hover:bg-slate-700 transition-colors"
+        aria-label="Toggle theme">
+        @if (theme() === 'light') {
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+        } @else {
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+          </svg>
+        }
+      </button>
+    </div>
+  </div>
+</nav>
+
