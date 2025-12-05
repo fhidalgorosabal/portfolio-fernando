@@ -1,3 +1,69 @@
-<h1 class="text-3xl m-8 font-bold underline">
-  Hello world!
-</h1>
+<!-- Navbar: Carga inmediata (siempre visible) -->
+@defer (on immediate; prefetch on idle) {
+  <app-navbar />
+} @loading {
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-gray-200 dark:border-slate-800 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16"></div>
+    </div>
+  </nav>
+}
+
+<!-- Hero: Carga inmediata (primera sección visible) -->
+@defer (on immediate) {
+  <app-hero />
+} @loading {
+  <section class="min-h-screen flex items-center justify-center bg-gradient-to-br from-white via-cyan-50 to-white dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 pt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div class="text-center">
+        <div class="mb-8 flex justify-center">
+          <div class="w-32 h-32 rounded-full bg-gray-200 dark:bg-slate-700 animate-pulse"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+}
+
+<!-- Experience: Carga cuando entra en el viewport -->
+@defer (on viewport) {
+  <app-experience />
+} @placeholder {
+  <div class="py-20 bg-white dark:bg-slate-900 min-h-[400px]"></div>
+} @loading {
+  <div class="py-20 bg-white dark:bg-slate-900 min-h-[400px] flex items-center justify-center">
+    <div class="animate-pulse text-gray-400">Cargando experiencia...</div>
+  </div>
+}
+
+<!-- Projects: Carga cuando entra en el viewport -->
+@defer (on viewport) {
+  <app-projects />
+} @placeholder {
+  <div class="py-20 bg-gradient-to-br from-cyan-50 to-white dark:from-slate-800 dark:to-slate-900 min-h-[400px]"></div>
+} @loading {
+  <div class="py-20 bg-gradient-to-br from-cyan-50 to-white dark:from-slate-800 dark:to-slate-900 min-h-[400px] flex items-center justify-center">
+    <div class="animate-pulse text-gray-400">Cargando proyectos...</div>
+  </div>
+}
+
+<!-- Skills: Carga cuando entra en el viewport -->
+@defer (on viewport) {
+  <app-skills />
+} @placeholder {
+  <div class="py-20 bg-white dark:bg-slate-900 min-h-[400px]"></div>
+} @loading {
+  <div class="py-20 bg-white dark:bg-slate-900 min-h-[400px] flex items-center justify-center">
+    <div class="animate-pulse text-gray-400">Cargando habilidades...</div>
+  </div>
+}
+
+<!-- Contact: Carga cuando entra en el viewport -->
+@defer (on viewport) {
+  <app-contact />
+} @placeholder {
+  <div class="py-20 bg-gradient-to-br from-cyan-50 to-white dark:from-slate-800 dark:to-slate-900 min-h-[400px]"></div>
+} @loading {
+  <div class="py-20 bg-gradient-to-br from-cyan-50 to-white dark:from-slate-800 dark:to-slate-900 min-h-[400px] flex items-center justify-center">
+    <div class="animate-pulse text-gray-400">Cargando contacto...</div>
+  </div>
+}
