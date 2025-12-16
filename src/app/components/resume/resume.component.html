@@ -1,0 +1,91 @@
+<!-- Action Buttons (floating, hidden in print) -->
+<div class="action-buttons">
+  <button (click)="goBack()" class="back-button bg-white dark:bg-slate-800 text-gray-700 dark:text-slate-300 border-2 border-gray-300 dark:border-slate-600 hover:bg-gray-50 dark:hover:bg-slate-700 hover:border-cyan-600 dark:hover:border-amber-500 hover:text-cyan-600 dark:hover:text-amber-500">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+    </svg>
+    Volver
+  </button>
+  <button (click)="downloadPDF()" class="print-button bg-white dark:bg-slate-800 text-gray-700 dark:text-slate-300 border-2 border-gray-300 dark:border-slate-600 hover:bg-gray-50 dark:hover:bg-slate-700 hover:border-cyan-600 dark:hover:border-amber-500 hover:text-cyan-600 dark:hover:text-amber-500">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/>
+    </svg>
+    Descargar PDF
+  </button>
+</div>
+
+<div class="resume-wrapper bg-gradient-to-br from-white via-cyan-50 to-white dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
+  <div class="resume-container">
+  <div class="resume-content">
+    <!-- Header -->
+    <header class="resume-header">
+      <h1>{{ data.personalInfo.name }}</h1>
+      <h2>{{ data.personalInfo.title }}</h2>
+      <div class="contact-info">
+        <span>{{ data.personalInfo.email }}</span>
+        <span>{{ data.personalInfo.phone }}</span>
+        <span>{{ data.personalInfo.location }}</span>
+      </div>
+    </header>
+
+    <!-- About -->
+    <section class="resume-section">
+      <p class="about-text">{{ data.personalInfo.description }}</p>
+    </section>
+
+    <!-- Skills -->
+    <section class="resume-section">
+      <h3 class="section-title">Habilidades Técnicas</h3>
+      <div class="skills-grid">
+        @for (skill of data.skills; track skill.name) {
+          <span class="skill-tag">{{ skill.name }}</span>
+        }
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="resume-section">
+      <h3 class="section-title">Experiencia Profesional</h3>
+      @for (exp of data.experiences; track exp.company) {
+        <div class="experience-item">
+          <div class="exp-header">
+            <div>
+              <strong>{{ exp.title }}</strong> - {{ exp.company }}
+            </div>
+            <div class="period">{{ exp.period }}</div>
+          </div>
+          @for (desc of exp.description; track desc) {
+            <p class="exp-description">{{ desc }}</p>
+          }
+          <div class="technologies">
+            <strong>Tecnologías:</strong> {{ exp.technologies.join(', ') }}
+          </div>
+        </div>
+      }
+    </section>
+
+    <!-- Education -->
+    <section class="resume-section">
+      <h3 class="section-title">Educación</h3>
+      @for (edu of data.education; track edu.degree) {
+        <div class="education-item">
+          <div class="edu-header">
+            <strong>{{ edu.degree }}</strong>
+          </div>
+          <div>{{ edu.institution }} | {{ edu.period }}</div>
+        </div>
+      }
+    </section>
+
+    <!-- Languages -->
+    <section class="resume-section">
+      <h3 class="section-title">Idiomas</h3>
+      <div class="languages-list">
+        <span class="language-item">Español (Nativo)</span>
+        <span class="language-item">Inglés (Intermedio)</span>
+        <span class="language-item">Portugués (Intermedio)</span>
+      </div>
+    </section>
+  </div>
+  </div>
+</div>
