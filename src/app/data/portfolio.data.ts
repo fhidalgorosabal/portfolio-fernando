@@ -114,28 +114,28 @@ export const portfolioData: PortfolioData = {
 
   projects: [
     {
-      title: 'E-commerce Platform',
-      description: 'Plataforma completa de comercio electrónico con carrito de compras, sistema de pagos y panel de administración.',
-      image: 'https://via.placeholder.com/600x400',
-      technologies: ['Angular', 'Node.js', 'MongoDB', 'Stripe'],
-      githubUrl: '#',
-      liveUrl: '#'
+      title: 'TranSoft',
+      description: 'Sistema desarrollado en CodeIgniter 3.0.6, Bootstrap v2.3.2 y jQuery 1.9.1 como parte del proyecto de tesis de la carrera de Ingeniería en Ciencias Informáticas. Está diseñado para gestionar la información relacionada con el transporte.',
+      image: '/assets/images/img-project-1.png',
+      technologies: ['CodeIgniter', 'Bootstrap', 'jQuery'],
+      githubUrl: 'https://github.com/fhidalgorosabal/transoft',
+      liveUrl: 'EMPTY'
     },
     {
-      title: 'Dashboard Analytics',
-      description: 'Dashboard interactivo para visualización de datos con gráficos en tiempo real y exportación de reportes.',
-      image: 'https://via.placeholder.com/600x400',
-      technologies: ['React', 'TypeScript', 'D3.js', 'Express'],
-      githubUrl: '#',
-      liveUrl: '#'
+      title: 'FinanceApp',
+      description: 'Aplicación web desarrollada en Angular 13.0.0 con NgPrime 13.1.0 (frontend) y Laravel 9.0.0 (backend). Es creada para la gestión financiera de manera eficiente, ya sea a nivel personal o para pequeñas empresas.',
+      image: '/assets/images/img-project-2.png',
+      technologies: ['Angular', 'NgPrime', 'Laravel'],
+      githubUrl: 'https://github.com/fhidalgorosabal/frontend-finance-app',
+      liveUrl: 'https://finance-app-fhr.vercel.app'
     },
     {
-      title: 'App de Gestión',
-      description: 'Aplicación web para gestión de tareas y proyectos con colaboración en tiempo real y notificaciones.',
-      image: 'https://via.placeholder.com/600x400',
-      technologies: ['Vue.js', 'Firebase', 'TailwindCSS', 'PWA'],
-      githubUrl: '#',
-      liveUrl: '#'
+      title: 'MovieApp',
+      description: 'Aplicación desarrollada en **React 18.3.1** que muestra un listado de las últimas películas del año. Utiliza la API de The Movie Database (TMDB).',
+      image: '/assets/images/img-project-3.png',
+      technologies: ['React', 'TypeScript', 'TailwindCSS'],
+      githubUrl: 'https://github.com/fhidalgorosabal/movie-app',
+      liveUrl: 'https://movie-app-fhr.vercel.app/'
     },
     {
       title: 'Portfolio Personal',
