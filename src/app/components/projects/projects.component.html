@@ -9,9 +9,9 @@
       </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
       @for (project of projects; track project.title) {
-        <div class="bg-white dark:bg-slate-800 rounded-xl shadow-lg hover:shadow-2xl transition-shadow overflow-hidden group">
+        <div class="bg-white dark:bg-slate-800 rounded-xl shadow-lg hover:shadow-2xl transition-shadow overflow-hidden group flex flex-col h-full">
           <!-- Project Image -->
           <div class="relative h-40 bg-gradient-to-br from-cyan-400 to-cyan-600 dark:from-amber-500 dark:to-amber-700 overflow-hidden">
             <img [src]="project.image" [alt]="project.title" 
@@ -20,7 +20,7 @@
           </div>
 
           <!-- Project Content -->
-          <div class="p-5">
+          <div class="p-5 flex flex-col flex-grow">
             <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">
               {{ project.title }}
             </h3>
@@ -38,7 +38,7 @@
             </div>
 
             <!-- Links -->
-            <div class="flex gap-4">
+            <div class="flex gap-4 mt-auto">
               @if (project.githubUrl) {
                 <a [href]="project.githubUrl" target="_blank" 
                    class="flex items-center text-gray-700 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-amber-500 transition-colors">

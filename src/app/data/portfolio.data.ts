@@ -19,6 +19,11 @@ export interface Experience {
   technologies: string[];
 }
 
+enum ProjectType {
+  Solo = 'Solo',
+  Team = 'Team'
+}
+
 export interface Project {
   title: string;
   description: string;
@@ -26,6 +31,7 @@ export interface Project {
   technologies: string[];
   githubUrl?: string;
   liveUrl?: string;
+  type?: ProjectType;
 }
 
 export interface Skill {
@@ -119,7 +125,7 @@ export const portfolioData: PortfolioData = {
       image: '/assets/images/img-project-1.png',
       technologies: ['CodeIgniter', 'Bootstrap', 'jQuery'],
       githubUrl: 'https://github.com/fhidalgorosabal/transoft',
-      liveUrl: 'EMPTY'
+      type: ProjectType.Solo
     },
     {
       title: 'FinanceApp',
@@ -127,7 +133,8 @@ export const portfolioData: PortfolioData = {
       image: '/assets/images/img-project-2.png',
       technologies: ['Angular', 'NgPrime', 'Laravel'],
       githubUrl: 'https://github.com/fhidalgorosabal/frontend-finance-app',
-      liveUrl: 'https://finance-app-fhr.vercel.app'
+      liveUrl: 'https://finance-app-fhr.vercel.app',
+      type: ProjectType.Solo
     },
     {
       title: 'MovieApp',
@@ -135,15 +142,45 @@ export const portfolioData: PortfolioData = {
       image: '/assets/images/img-project-3.png',
       technologies: ['React', 'TypeScript', 'TailwindCSS'],
       githubUrl: 'https://github.com/fhidalgorosabal/movie-app',
-      liveUrl: 'https://movie-app-fhr.vercel.app/'
+      liveUrl: 'https://movie-app-fhr.vercel.app/',
+      type: ProjectType.Solo
     },
     {
-      title: 'Portfolio Personal',
-      description: 'Sitio web personal responsivo con sistema de temas y animaciones suaves.',
-      image: 'https://via.placeholder.com/600x400',
-      technologies: ['Angular', 'TailwindCSS', 'TypeScript'],
-      githubUrl: '#',
-      liveUrl: '#'
+      title: 'Deliver App',
+      description: 'DeliverApp es una aplicación web desarrollada en Angular 20.1.0 diseñada para gestionar viajes y entregas de paquetes de manera eficiente, ideal para empresas de logística, mensajería o servicios de delivery.',
+      image: '/assets/images/img-project-4.png',
+      technologies: ['Angular', 'Bootstrap', 'Electron'],
+      githubUrl: 'https://github.com/fhidalgorosabal/deliver-app',
+      liveUrl: 'https://deliver-app-fhr.vercel.app',
+      type: ProjectType.Solo
+    },
+    {
+      title: 'SAGEN',
+      description: 'Es una plataforma informática desarrollada en Laravel por la empresa Desoft, donde integré el equipo de desarrollo. Permite a las Organizaciones Superiores de Dirección Empresarial (OSDE), Uniones de Empresas y entidades, la gestión energética desde las estructuras de su subordinación.',
+      image: '/assets/images/img-project-5.jpg',
+      technologies: ['Laravel', 'Bootstrap', 'PostgreSQL'],
+      type: ProjectType.Team
+    },
+    {
+      title: 'SNB Mobile',
+      description: 'Aplicación de banca móvil desarrollada por Crealogix en Angular y Cordova para la integración multiplataforma, en la que participé como parte del equipo de desarrollo. Diseñada para el Banco Nacional Saudí (Saudi National Bank).',
+      image: '/assets/images/img-project-6.png',
+      technologies: ['Angular', 'SCSS', 'Apache Cordova'],
+      type: ProjectType.Team
+    },
+    {
+      title: 'Jameel Business (Aljuf Finance)',
+      description: 'Jamel Business Mobile, Jamel Business Desktop y Jamel Business Admin forman un conjunto de aplicaciones avanzadas desarrolladas en Angular exclusivamente para ALJUF Finance por Crealogix, donde participé como parte del equipo de desarrollo.',
+      image: '/assets/images/img-project-7.png',
+      technologies: ['Angular', 'SCSS', 'Apache Cordova'],
+      type: ProjectType.Team
+    },
+    {
+      title: 'Zenda (Gestión de Personas)',
+      description: 'Zenda es la solución de Defontana, desarrollada en Angular, que permite una gestión integral del capital humano de la empresa. De esta manera, puedes administrar y controlar de forma rápida y simple las principales labores del área.',
+      image: '/assets/images/img-project-8.png',
+      technologies: ['Angular', 'Tailwind CSS', 'Angular Material'],
+      type: ProjectType.Team
     }
   ],
 
